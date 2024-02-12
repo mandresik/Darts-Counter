@@ -16,11 +16,13 @@ class CreateGameViewModel() : ViewModel() {
     var nick5 = MutableLiveData<String>()
     var nick6 = MutableLiveData<String>()
     var players = ArrayList<String>()
-    private var count:Int
+    var count: Int
 
     init {
         count = 0
     }
+
+    val processToGame = MutableLiveData<Boolean>()
 
 
     fun addPlayer(){
@@ -41,6 +43,10 @@ class CreateGameViewModel() : ViewModel() {
         }
 
         editNick.value = ""
+    }
+
+    fun gotoGame(){
+        processToGame.value = true
     }
 
 }

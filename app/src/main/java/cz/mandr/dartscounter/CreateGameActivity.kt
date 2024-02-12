@@ -1,5 +1,6 @@
 package cz.mandr.dartscounter
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -25,5 +26,16 @@ class CreateGameActivity : AppCompatActivity() {
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
+
+        viewModel.processToGame.observe(this, { value ->
+            if(value){
+                val intent = Intent(this, GameActivity::class.java)
+                intent.putExtra("COUNT", viewModel.count)
+                intent.putExtra("PLAYERS", viewModel.players)
+                startActivity(intent)
+                viewModel.processToGame.value = false
+            }
+        })
+
     }
 }
