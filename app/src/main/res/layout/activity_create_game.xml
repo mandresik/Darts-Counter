@@ -15,21 +15,22 @@
         tools:context=".CreateGameActivity">
 
         <Button
-            android:id="@+id/btn_play"
+            android:id="@+id/btn_Play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
             android:layout_marginEnd="50dp"
-            android:layout_marginBottom="50dp"
             android:text="@string/CREATE_GAME_Play"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_Player6" />
 
         <TextView
             android:id="@+id/textView_GameSettings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="@string/CREATE_GAME_GameSettings"
+            android:layout_marginTop="50dp"
+            android:text="@string/MAIN_NewGame"
+            android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -39,24 +40,91 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="70dp"
             android:ems="10"
             android:hint="@string/CREATE_GAME_PlayersNick"
             android:inputType="text"
+            android:text="@={ viewModel.editNick }"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView_GameSettings" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_AddPlayer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
             android:layout_marginEnd="30dp"
             android:text="@string/CREATE_GAME_AddPlayer"
+            android:onClick="@{ () -> viewModel.addPlayer() }"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/editText_NewPlayer"
-            app:layout_constraintTop_toBottomOf="@+id/textView_GameSettings" />
+            app:layout_constraintTop_toTopOf="@+id/editText_NewPlayer" />
+
+        <TextView
+            android:id="@+id/textView_Player1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@{ viewModel.nick1 }"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_NewPlayer" />
+
+        <TextView
+            android:id="@+id/textView_Player2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{ viewModel.nick2 }"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_Player1" />
+
+        <TextView
+            android:id="@+id/textView_Player3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{ viewModel.nick3 }"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_Player2" />
+
+        <TextView
+            android:id="@+id/textView_Player4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{ viewModel.nick4 }"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_Player3" />
+
+        <TextView
+            android:id="@+id/textView_Player5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{ viewModel.nick5 }"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_Player4" />
+
+        <TextView
+            android:id="@+id/textView_Player6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{ viewModel.nick6 }"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_Player5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

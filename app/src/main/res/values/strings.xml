@@ -3,7 +3,7 @@
 
     <string name="MAIN_NewGame">New Game</string>
 
-    <string name="CREATE_GAME_GameSettings">Game Settings</string>
+    <string name="CREATE_GAME_NewGame">New Game</string>
     <string name="CREATE_GAME_PlayersNick">Player Nickname</string>
     <string name="CREATE_GAME_Play">Play</string>
     <string name="CREATE_GAME_AddPlayer">Add Player</string>

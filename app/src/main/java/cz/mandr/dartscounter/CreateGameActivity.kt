@@ -2,6 +2,9 @@ package cz.mandr.dartscounter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import cz.mandr.dartscounter.databinding.ActivityCreateGameBinding
 
@@ -18,6 +21,7 @@ class CreateGameActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this, CreateGameViewModelFactory())
             .get(CreateGameViewModel::class.java)
+
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
