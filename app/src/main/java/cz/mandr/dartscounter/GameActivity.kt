@@ -21,18 +21,19 @@ class GameActivity : AppCompatActivity() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-   //     viewModel.players = intent.getStringArrayExtra("PLAYERS")
 
-        var cnt = intent.getIntExtra("COUNT", 0)
-        viewModel.count.value = cnt
+        viewModel.count = intent.getIntExtra("COUNT", 0)
+        viewModel.initialScore = intent.getIntExtra("SCORE0", 0)
 
+        var arrList = intent.getStringArrayExtra("PLAYERS")
+        if (arrList != null) { viewModel.players = arrList }
 
-        var arrList = intent.getStringArrayListExtra("PLAYERS")
-        if (arrList != null) {
-            viewModel.players = arrList
-        }
-        /*
-        val nick1 = intent.getStringArrayExtra("PLAYERS")!![0]
-        binding.textViewGamePlayer1.text = nick1.toString() */
+        if(viewModel.count > 0) viewModel.scoreMutable1.value = viewModel.initialScore.toString()
+        if(viewModel.count > 1) viewModel.scoreMutable2.value = viewModel.initialScore.toString()
+        if(viewModel.count > 2) viewModel.scoreMutable3.value = viewModel.initialScore.toString()
+        if(viewModel.count > 3) viewModel.scoreMutable4.value = viewModel.initialScore.toString()
+        if(viewModel.count > 4) viewModel.scoreMutable5.value = viewModel.initialScore.toString()
+        if(viewModel.count > 5) viewModel.scoreMutable6.value = viewModel.initialScore.toString()
+
     }
 }

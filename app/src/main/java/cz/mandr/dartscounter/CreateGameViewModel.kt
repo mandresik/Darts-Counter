@@ -8,6 +8,12 @@ import java.io.Closeable
 
 class CreateGameViewModel() : ViewModel() {
 
+    var checked101 = MutableLiveData<Boolean>()
+    var checked201 = MutableLiveData<Boolean>()
+    var checked301 = MutableLiveData<Boolean>()
+    var checked501 = MutableLiveData<Boolean>()
+    var checked701 = MutableLiveData<Boolean>()
+
     var editNick = MutableLiveData<String>()
     var nick1 = MutableLiveData<String>()
     var nick2 = MutableLiveData<String>()
@@ -15,22 +21,23 @@ class CreateGameViewModel() : ViewModel() {
     var nick4 = MutableLiveData<String>()
     var nick5 = MutableLiveData<String>()
     var nick6 = MutableLiveData<String>()
-    var players = ArrayList<String>()
-    var count: Int
-
-    init {
-        count = 0
-    }
+    var players = Array<String>(6){""}
+    var count: Int = 0
+    var initialScore: Int = 0
 
     val processToGame = MutableLiveData<Boolean>()
+
+    init {
+        checked301.value = true
+    }
 
 
     fun addPlayer(){
         val playerName = editNick.value
 
-        if(count < 6 && playerName.toString().isNotEmpty()){
+        if(count < 6 && playerName.toString().trim().isNotEmpty()){
+            players[count] = playerName!!
             count++
-            players.add(playerName!!)
 
             when(count){
                 1 -> nick1.value = playerName!!
@@ -46,7 +53,17 @@ class CreateGameViewModel() : ViewModel() {
     }
 
     fun gotoGame(){
+        initialScore = getScore0()
         processToGame.value = true
+    }
+
+    private fun getScore0() : Int{
+        if(checked101.value == true) return 101
+        if(checked201.value == true) return 201
+        if(checked301.value == true) return 301
+        if(checked501.value == true) return 501
+        if(checked701.value == true) return 701
+        return -1
     }
 
 }
