@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:padding="10dp"
+            android:background="@{ viewModel.bckColor[0] }"
             app:layout_constraintTop_toBottomOf="@+id/textView_Score"
             tools:layout_editor_absoluteX="16dp">
 
@@ -54,7 +55,7 @@
                 android:layout_marginLeft="30sp"
                 android:layout_marginRight="30sp"
                 android:gravity="right"
-                android:text="@{ viewModel.scoreMutable1 }"
+                android:text="@={ viewModel.scoreMutable1 }"
                 android:textSize="25sp" />
         </RelativeLayout>
 
@@ -64,6 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:background="@{ viewModel.bckColor[1] }"
             app:layout_constraintTop_toBottomOf="@+id/relLayout1"
             tools:layout_editor_absoluteX="16dp">
 
@@ -86,7 +88,7 @@
                 android:layout_marginLeft="30sp"
                 android:layout_marginRight="30sp"
                 android:gravity="right"
-                android:text="@{ viewModel.scoreMutable2 }"
+                android:text="@={ viewModel.scoreMutable2 }"
                 android:textSize="25sp" />
         </RelativeLayout>
 
@@ -96,6 +98,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:background="@{ viewModel.bckColor[2] }"
             app:layout_constraintTop_toBottomOf="@+id/relLayout2"
             tools:layout_editor_absoluteX="16dp">
 
@@ -118,7 +121,7 @@
                 android:layout_marginLeft="30sp"
                 android:layout_marginRight="30sp"
                 android:gravity="right"
-                android:text="@{ viewModel.scoreMutable3 }"
+                android:text="@={ viewModel.scoreMutable3 }"
                 android:textSize="25sp" />
         </RelativeLayout>
 
@@ -128,6 +131,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:background="@{ viewModel.bckColor[3] }"
             app:layout_constraintTop_toBottomOf="@+id/relLayout3"
             tools:layout_editor_absoluteX="16dp">
 
@@ -150,7 +154,7 @@
                 android:layout_marginLeft="30sp"
                 android:layout_marginRight="30sp"
                 android:gravity="right"
-                android:text="@{ viewModel.scoreMutable4 }"
+                android:text="@={ viewModel.scoreMutable4 }"
                 android:textSize="25sp" />
         </RelativeLayout>
 
@@ -160,6 +164,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:background="@{ viewModel.bckColor[4] }"
             app:layout_constraintTop_toBottomOf="@+id/relLayout4"
             tools:layout_editor_absoluteX="16dp">
 
@@ -182,7 +187,7 @@
                 android:layout_marginLeft="30sp"
                 android:layout_marginRight="30sp"
                 android:gravity="right"
-                android:text="@{ viewModel.scoreMutable5 }"
+                android:text="@={ viewModel.scoreMutable5 }"
                 android:textSize="25sp" />
         </RelativeLayout>
 
@@ -192,6 +197,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:background="@{ viewModel.bckColor[5] }"
             app:layout_constraintTop_toBottomOf="@+id/relLayout5"
             tools:layout_editor_absoluteX="16dp">
 
@@ -214,7 +220,7 @@
                 android:layout_marginLeft="30sp"
                 android:layout_marginRight="30sp"
                 android:gravity="right"
-                android:text="@{ viewModel.scoreMutable6 }"
+                android:text="@={ viewModel.scoreMutable6 }"
                 android:textSize="25sp" />
         </RelativeLayout>
 
@@ -246,6 +252,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_toEndOf="@id/textViewThrow1"
                 android:hint="Score"
+                android:text="@={ viewModel.throw1 }"
                 android:inputType="number"
                 android:textSize="15sp" />
 
@@ -262,19 +269,21 @@
                     android:id="@+id/radioButton1x1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
+                    android:checked="@={ viewModel.throwMult1x1 }"
                     android:text="x1" />
 
                 <RadioButton
                     android:id="@+id/radioButton1x2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="@={ viewModel.throwMult1x2 }"
                     android:text="x2" />
 
                 <RadioButton
                     android:id="@+id/radioButton1x3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="@={ viewModel.throwMult1x3 }"
                     android:text="x3" />
             </RadioGroup>
 
@@ -307,6 +316,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_toEndOf="@id/textViewThrow2"
                 android:hint="Score"
+                android:text="@={ viewModel.throw2 }"
                 android:inputType="number"
                 android:textSize="15sp" />
 
@@ -323,19 +333,21 @@
                     android:id="@+id/radioButton2x1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
+                    android:checked="@={ viewModel.throwMult2x1 }"
                     android:text="x1" />
 
                 <RadioButton
                     android:id="@+id/radioButton2x2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="@={ viewModel.throwMult2x2 }"
                     android:text="x2" />
 
                 <RadioButton
                     android:id="@+id/radioButton2x3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="@={ viewModel.throwMult2x3 }"
                     android:text="x3" />
             </RadioGroup>
 
@@ -368,6 +380,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_toEndOf="@id/textViewThrow3"
                 android:hint="Score"
+                android:text="@={ viewModel.throw3 }"
                 android:inputType="number"
                 android:textSize="15sp" />
 
@@ -384,19 +397,21 @@
                     android:id="@+id/radioButton3x1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
+                    android:checked="@={ viewModel.throwMult3x1 }"
                     android:text="x1" />
 
                 <RadioButton
                     android:id="@+id/radioButton3x2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="@={ viewModel.throwMult3x2 }"
                     android:text="x2" />
 
                 <RadioButton
                     android:id="@+id/radioButton3x3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="@={ viewModel.throwMult3x3 }"
                     android:text="x3" />
             </RadioGroup>
 
@@ -408,6 +423,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:text="@string/GAME_NextPlayer"
+            android:onClick="@{ () -> viewModel.handleScore() }"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layoutThrow3" />
