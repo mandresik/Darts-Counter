@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutThrow"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:padding="0dp">
+
+    <TextView
+    android:id="@+id/textViewThrow"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:layout_centerVertical="true"
+    android:layout_marginStart="30dp"
+    android:text="Throw X:"
+    android:textSize="15sp" />
+
+    <EditText
+    android:id="@+id/editTextThrow1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_toEndOf="@id/textViewThrow"
+    android:hint="Score"
+    android:inputType="number"
+    android:textSize="15sp" />
+
+    <RadioGroup
+    android:id="@+id/radioGroup1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_centerVertical="true"
+    android:layout_marginEnd="40dp"
+    android:orientation="horizontal">
+
+    <RadioButton
+        android:id="@+id/radioButton1x1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="x1" />
+
+    <RadioButton
+        android:id="@+id/radioButton1x2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x2" />
+
+    <RadioButton
+        android:id="@+id/radioButton1x3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x3" />
+    </RadioGroup>
+
+</RelativeLayout>

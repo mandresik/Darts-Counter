@@ -9,5 +9,9 @@
     <string name="CREATE_GAME_AddPlayer">Add Player</string>
 
     <string name="GAME_Score">Score</string>
+    <string name="GAME_Record">Record</string>
+    <string name="GAME_Throw1">Throw 1:</string>
+    <string name="GAME_Throw2">Throw 2:</string>
+    <string name="GAME_Throw3">Throw 3:</string>
 
 </resources>
