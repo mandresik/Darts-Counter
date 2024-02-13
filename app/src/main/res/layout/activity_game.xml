@@ -218,6 +218,199 @@
                 android:textSize="25sp" />
         </RelativeLayout>
 
+<!-- ########################## THROW 1 ########################## -->
+        <RelativeLayout
+            android:id="@+id/layoutThrow1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:padding="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/relLayout6">
+
+            <TextView
+                android:id="@+id/textViewThrow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="Throw 1:"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextThrow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toEndOf="@id/textViewThrow1"
+                android:hint="Score"
+                android:inputType="number"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="40dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton1x1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="x1" />
+
+                <RadioButton
+                    android:id="@+id/radioButton1x2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="x2" />
+
+                <RadioButton
+                    android:id="@+id/radioButton1x3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="x3" />
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <!-- ########################## THROW 2 ########################## -->
+        <RelativeLayout
+            android:id="@+id/layoutThrow2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:padding="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/layoutThrow1">
+
+            <TextView
+                android:id="@+id/textViewThrow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="Throw 2:"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextThrow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toEndOf="@id/textViewThrow2"
+                android:hint="Score"
+                android:inputType="number"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="40dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton2x1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="x1" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2x2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="x2" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2x3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="x3" />
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <!-- ########################## THROW 3 ########################## -->
+        <RelativeLayout
+            android:id="@+id/layoutThrow3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:padding="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/layoutThrow2">
+
+            <TextView
+                android:id="@+id/textViewThrow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="Throw 3:"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextThrow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toEndOf="@id/textViewThrow3"
+                android:hint="Score"
+                android:inputType="number"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="40dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton3x1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="x1" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3x2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="x2" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3x3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="x3" />
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/GAME_NextPlayer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutThrow3" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
