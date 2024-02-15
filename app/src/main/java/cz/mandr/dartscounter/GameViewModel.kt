@@ -56,9 +56,9 @@ class GameViewModel() : ViewModel() {
 
     // returns multiplier of throw with index throwIndex
     private fun getMultiplier(throwIndex : Int) : Int{
-        if(throwMultipliers[3 * throwIndex].value == true) return 1
-        if(throwMultipliers[3 * throwIndex + 1].value == true) return 2
-        if(throwMultipliers[3 * throwIndex + 2].value == true) return 3
+        for(i in 0 .. 2){
+            if(throwMultipliers[3 * throwIndex + i].value == true) return i + 1
+        }
         return 0
     }
 
