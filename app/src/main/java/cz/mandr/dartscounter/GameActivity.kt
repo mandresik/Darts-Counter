@@ -28,12 +28,9 @@ class GameActivity : AppCompatActivity() {
         var arrList = intent.getStringArrayExtra("PLAYERS")
         if (arrList != null) { viewModel.players = arrList }
 
-        if(viewModel.count > 0) viewModel.scoreMutable1.value = viewModel.initialScore.toString()
-        if(viewModel.count > 1) viewModel.scoreMutable2.value = viewModel.initialScore.toString()
-        if(viewModel.count > 2) viewModel.scoreMutable3.value = viewModel.initialScore.toString()
-        if(viewModel.count > 3) viewModel.scoreMutable4.value = viewModel.initialScore.toString()
-        if(viewModel.count > 4) viewModel.scoreMutable5.value = viewModel.initialScore.toString()
-        if(viewModel.count > 5) viewModel.scoreMutable6.value = viewModel.initialScore.toString()
+        for(i in 0..< viewModel.count){
+            viewModel.playersScore[i].value = viewModel.initialScore.toString()
+        }
 
     }
 }
