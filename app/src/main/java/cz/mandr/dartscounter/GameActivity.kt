@@ -2,6 +2,7 @@ package cz.mandr.dartscounter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import cz.mandr.dartscounter.databinding.ActivityGameBinding
 
@@ -21,15 +22,22 @@ class GameActivity : AppCompatActivity() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-
+        // number of players
         viewModel.count = intent.getIntExtra("COUNT", 0)
-        viewModel.initialScore = intent.getIntExtra("SCORE0", 0)
 
-        var arrList = intent.getStringArrayExtra("PLAYERS")
+        // index of player to play
+        val firstToPlay = intent.getIntExtra("PLAYER0", 0)
+        viewModel.setColor(firstToPlay)
+        viewModel.currentPlayer = firstToPlay
+
+        // nicknames
+        val arrList = intent.getStringArrayExtra("PLAYERS")
         if (arrList != null) { viewModel.players = arrList }
 
+        // score of all players
+        val arrScore = intent.getStringArrayExtra("SCORE0")
         for(i in 0..< viewModel.count){
-            viewModel.playersScore[i].value = viewModel.initialScore.toString()
+            viewModel.playersScore[i].value = arrScore!![i]
         }
 
     }

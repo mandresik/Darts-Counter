@@ -23,7 +23,7 @@ class CreateGameViewModel() : ViewModel() {
     var nick6 = MutableLiveData<String>()
     var players = Array<String>(6){""}
     var count: Int = 0
-    var initialScore: Int = 0
+    var initialScore = Array<String>(6){""}
 
     val processToGame = MutableLiveData<Boolean>()
 
@@ -31,7 +31,7 @@ class CreateGameViewModel() : ViewModel() {
         checked301.value = true
     }
 
-
+    // adds player to list of players
     fun addPlayer(){
         val playerName = editNick.value
 
@@ -52,11 +52,14 @@ class CreateGameViewModel() : ViewModel() {
         editNick.value = ""
     }
 
+    // sets initial score for all players and sets processToGame true
     fun gotoGame(){
-        initialScore = getScore0()
+        val score = getScore0()
+        for(i in 0 ..< count) initialScore[i] = score.toString()
         processToGame.value = true
     }
 
+    // returns initial score
     private fun getScore0() : Int{
         if(checked101.value == true) return 101
         if(checked201.value == true) return 201

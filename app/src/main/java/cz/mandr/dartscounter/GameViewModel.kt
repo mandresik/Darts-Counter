@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 class GameViewModel() : ViewModel() {
 
     var count: Int = 0
-    var initialScore: Int = 0
     var players = Array<String>(6){""}
 
     // score of each player in the game
@@ -23,18 +22,17 @@ class GameViewModel() : ViewModel() {
     var bckColors = Array<MutableLiveData<Int>>(6) { MutableLiveData<Int>() }
 
     init {
-        for(i in 0..2) throwMultipliers[3 * i].value = true
-        setColor(0)
+        setDefaultRecord()
     }
 
-    private var currentPlayer : Int = 0
+     var currentPlayer : Int = 0
 
     // evaluates score of throws in one round
     fun handleScore(){
-        var multipliers = Array<Int>(3){ 0 }
-        var score = Array<Int>(3){ 0 }
+        val multipliers = Array<Int>(3){ 0 }
+        val score = Array<Int>(3){ 0 }
         var currentScore: Int = getScore(currentPlayer)
-        var scoreBeforeThrows = currentScore
+        val scoreBeforeThrows = currentScore
 
         for(i in 0 .. 2){
             multipliers[i] = getMultiplier(i)
@@ -88,9 +86,9 @@ class GameViewModel() : ViewModel() {
     }
 
     // sets background color of player with index playerIndex to custom background color
-    private fun setColor(playerIndex: Int){
+     fun setColor(playerIndex: Int){
         for(x in bckColors) { x.value = android.R.color.background_light}
         bckColors[playerIndex].value = R.color.backgroundColor
-    }
+     }
 
 }

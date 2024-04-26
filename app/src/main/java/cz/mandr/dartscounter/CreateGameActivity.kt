@@ -31,6 +31,7 @@ class CreateGameActivity : AppCompatActivity() {
             if(value){
                 val intent = Intent(this, GameActivity::class.java)
                 intent.putExtra("COUNT", viewModel.count)
+                intent.putExtra("PLAYER0", 0)
                 intent.putExtra("SCORE0", viewModel.initialScore)
                 intent.putExtra("PLAYERS", viewModel.players)
                 startActivity(intent)
