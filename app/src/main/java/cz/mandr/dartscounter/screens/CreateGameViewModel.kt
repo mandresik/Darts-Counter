@@ -1,10 +1,7 @@
-package cz.mandr.dartscounter
+package cz.mandr.dartscounter.screens
 
-import android.widget.Toast
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import java.io.Closeable
 
 class CreateGameViewModel() : ViewModel() {
 

@@ -1,4 +1,4 @@
-package cz.mandr.dartscounter
+package cz.mandr.dartscounter.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

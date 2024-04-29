@@ -1,8 +1,9 @@
-package cz.mandr.dartscounter
+package cz.mandr.dartscounter.screens
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import cz.mandr.dartscounter.R
 
 class GameViewModel() : ViewModel() {
 

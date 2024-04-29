@@ -1,11 +1,8 @@
-package cz.mandr.dartscounter
+package cz.mandr.dartscounter.screens
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import cz.mandr.dartscounter.databinding.ActivityCreateGameBinding
 

@@ -1,15 +1,14 @@
-package cz.mandr.dartscounter
+package cz.mandr.dartscounter.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-class GameViewModelFactory() : ViewModelProvider.Factory {
+class MainViewModelFactory() : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(GameViewModel::class.java)){
-            return GameViewModel() as T
+        if(modelClass.isAssignableFrom(MainViewModel::class.java)){
+            return MainViewModel() as T
         }
         throw IllegalArgumentException("Wrong ViewModel class")
     }
-
 }

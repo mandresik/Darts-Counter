@@ -1,4 +1,4 @@
-package cz.mandr.dartscounter
+package cz.mandr.dartscounter.screens
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

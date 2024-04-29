@@ -1,8 +1,7 @@
-package cz.mandr.dartscounter
+package cz.mandr.dartscounter.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import cz.mandr.dartscounter.databinding.ActivityGameBinding
 
