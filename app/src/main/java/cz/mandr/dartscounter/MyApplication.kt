@@ -1,4 +1,16 @@
 package cz.mandr.dartscounter
 
-class MyApplication {
+import android.app.Application
+import cz.mandr.dartscounter.database.getDatabase
+
+class MyApplication : Application() {
+
+    val repository: Repository by lazy {
+        Repository(getDatabase(this))
+    }
+
+    override fun onCreate(){
+        super.onCreate()
+    }
+
 }
