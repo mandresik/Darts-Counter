@@ -14,6 +14,7 @@ class GameAdapter(private val dataSet: ArrayList<Game>) :
 
 
     private var deleteClickListener: GameDeleteClickListener? = null
+    private var playClickListener: GamePlayClickListener? = null
 
     interface GameDeleteClickListener {
         fun onDeleteClick(game: Game)
@@ -21,6 +22,14 @@ class GameAdapter(private val dataSet: ArrayList<Game>) :
 
     fun setDeleteClickListener(listener: GameDeleteClickListener) {
         deleteClickListener = listener
+    }
+
+    interface GamePlayClickListener {
+        fun onPlayClick(game: Game)
+    }
+
+    fun setPlayClickListener(listener: GamePlayClickListener) {
+        playClickListener = listener
     }
 
 
@@ -35,6 +44,12 @@ class GameAdapter(private val dataSet: ArrayList<Game>) :
                 }
             }
 
+            binding.buttonPlay.setOnClickListener{
+                val position = adapterPosition
+                if(position != RecyclerView.NO_POSITION){
+                    playClickListener?.onPlayClick(dataSet[position])
+                }
+            }
 
         }
     }

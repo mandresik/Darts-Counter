@@ -25,7 +25,7 @@ interface GameDao{
     @Query("SELECT * FROM games WHERE gameID = :gameId")
     fun getGameById(gameId: Int) : Flow<GameDTO>
 
-    @Query("SELECT * FROM games")
+    @Query("SELECT * FROM games ORDER BY gameID DESC")
     fun getAllGames() : Flow<List<GameDTO>>
 
     @Query("SELECT MAX(gameID) FROM games")

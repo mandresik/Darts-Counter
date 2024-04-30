@@ -1,5 +1,6 @@
 package cz.mandr.dartscounter.screens
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -39,7 +40,7 @@ class SavedGamesActivity : AppCompatActivity() {
             adapter.updateData(gamesMut)
         })
 
-        // get game list from database
+        // get games list from database
         viewModel.getGames()
 
         // listener for deleting game
@@ -50,7 +51,17 @@ class SavedGamesActivity : AppCompatActivity() {
             }
         })
 
-
+        // listener for playing game
+        adapter.setPlayClickListener(object: GameAdapter.GamePlayClickListener{
+            override fun onPlayClick(game: Game) {
+                val intent = Intent(this@SavedGamesActivity, GameActivity::class.java)
+                intent.putExtra("COUNT", game.count)
+                intent.putExtra("PLAYER0", game.firstToPlay)
+                intent.putExtra("SCORE0", game.score.toTypedArray())
+                intent.putExtra("PLAYERS", game.players.toTypedArray())
+                startActivity(intent)
+            }
+        })
 
     }
 }
