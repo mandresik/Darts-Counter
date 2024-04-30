@@ -18,7 +18,7 @@ class Repository(private val database: MyRoomDatabase) {
         }
     }
 
-    suspend fun deleteById(gameId: Int){
+    suspend fun deleteGameById(gameId: Int){
         withContext(Dispatchers.IO){
             database.gameDao.deleteGameById(gameId)
         }

@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import cz.mandr.dartscounter.MyApplication
 import cz.mandr.dartscounter.adapter.GameAdapter
+import cz.mandr.dartscounter.database.Game
 import cz.mandr.dartscounter.databinding.ActivitySavedGamesBinding
 
 class SavedGamesActivity : AppCompatActivity() {
@@ -38,8 +39,18 @@ class SavedGamesActivity : AppCompatActivity() {
             adapter.updateData(gamesMut)
         })
 
+        // get game list from database
         viewModel.getGames()
 
-    }
+        // listener for deleting game
+        adapter.setDeleteClickListener(object: GameAdapter.GameDeleteClickListener{
+            override fun onDeleteClick(game: Game){
+                viewModel.deleteGame(game.gameID)
+                viewModel.getGames()
+            }
+        })
 
+
+
+    }
 }

@@ -19,4 +19,10 @@ class SavedGamesViewModel(private val repository: Repository) : ViewModel() {
         }
     }
 
+    fun deleteGame(gameId: Int){
+        viewModelScope.launch {
+            repository.deleteGameById(gameId)
+        }
+    }
+
 }
