@@ -9,7 +9,11 @@ data class Game(
     val score: List<String>
 ){
     fun playersString() : String{
-        return "ou jes"
+        var ret: String = ""
+        for(i in 0 ..< count){
+            ret += players[i] + ": " + score[i] + "\n"
+        }
+        return ret
     }
 }
 
