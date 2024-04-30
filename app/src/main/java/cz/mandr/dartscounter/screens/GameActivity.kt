@@ -51,5 +51,14 @@ class GameActivity : AppCompatActivity() {
             }
         })
 
+        viewModel.processToResult.observe(this, { value ->
+            if(value){
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("WINNER", viewModel.players[viewModel.currentPlayer])
+                startActivity(intent)
+                viewModel.processToResult.value = false
+            }
+        })
+
     }
 }

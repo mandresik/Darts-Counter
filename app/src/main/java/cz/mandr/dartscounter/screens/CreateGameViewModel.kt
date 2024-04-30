@@ -51,9 +51,11 @@ class CreateGameViewModel() : ViewModel() {
 
     // sets initial score for all players and sets processToGame true
     fun gotoGame(){
-        val score = getScore0()
-        for(i in 0 ..< count) initialScore[i] = score.toString()
-        processToGame.value = true
+        if(count != 0){
+            val score = getScore0()
+            for(i in 0 ..< count) initialScore[i] = score.toString()
+            processToGame.value = true
+        }
     }
 
     // returns initial score

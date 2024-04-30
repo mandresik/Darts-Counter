@@ -28,6 +28,7 @@ class GameViewModel(private val repository: Repository) : ViewModel() {
     var bckColors = Array<MutableLiveData<Int>>(6) { MutableLiveData<Int>() }
 
     var processToMain = MutableLiveData<Boolean>()
+    var processToResult = MutableLiveData<Boolean>()
 
     init {
         setDefaultRecord()
@@ -88,8 +89,8 @@ class GameViewModel(private val repository: Repository) : ViewModel() {
 
     private fun checkWin(score : Int){
         if(score == 0){
-            // win screen
-            Log.d("Game result", "Game win")
+            // win screen, current player is the winner
+            processToResult.value = true
         }
     }
 
