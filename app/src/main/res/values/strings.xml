@@ -15,5 +15,7 @@
     <string name="GAME_Throw3">Throw 3:</string>
     <string name="GAME_NextPlayer">Next Player</string>
     <string name="GAME_Save">Save</string>
+    <string name="SAVED_saved">Saved games</string>
+    <string name="MAIN_Saved">Saved Games</string>
 
 </resources>

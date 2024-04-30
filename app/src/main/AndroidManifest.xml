@@ -20,6 +20,9 @@
             android:name=".screens.CreateGameActivity"
             android:exported="false" />
         <activity
+            android:name=".screens.SavedGamesActivity"
+            android:exported="false" />
+        <activity
             android:name=".screens.MainActivity"
             android:exported="true">
             <intent-filter>

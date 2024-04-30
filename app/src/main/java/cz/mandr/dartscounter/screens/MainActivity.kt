@@ -32,5 +32,14 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+
+        viewModel.processToSavedGames.observe(this, { value ->
+            if(value){
+                val intent = Intent(this, SavedGamesActivity::class.java)
+                startActivity(intent)
+                viewModel.processToSavedGames.value = false
+            }
+        })
+
     }
 }
