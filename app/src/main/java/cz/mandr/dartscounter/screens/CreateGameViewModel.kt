@@ -30,10 +30,10 @@ class CreateGameViewModel() : ViewModel() {
 
     // adds player to list of players
     fun addPlayer(){
-        val playerName = editNick.value
+        val playerName = editNick.value?.trim()
 
-        if(count < 6 && playerName.toString().trim().isNotEmpty()){
-            players[count] = playerName!!
+        if(count < 6 && !playerName.isNullOrEmpty()){
+            players[count] = playerName
             count++
 
             when(count){
