@@ -3,9 +3,14 @@ package cz.mandr.dartscounter.screens
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import cz.mandr.dartscounter.R
+import cz.mandr.dartscounter.Repository
+import cz.mandr.dartscounter.database.Game
+import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.launch
 
-class GameViewModel() : ViewModel() {
+class GameViewModel(private val repository: Repository) : ViewModel() {
 
     var count: Int = 0
     var players = Array<String>(6){""}
@@ -21,6 +26,8 @@ class GameViewModel() : ViewModel() {
 
     // background colors of each player
     var bckColors = Array<MutableLiveData<Int>>(6) { MutableLiveData<Int>() }
+
+    var processToMain = MutableLiveData<Boolean>()
 
     init {
         setDefaultRecord()
@@ -91,5 +98,25 @@ class GameViewModel() : ViewModel() {
         for(x in bckColors) { x.value = android.R.color.background_light}
         bckColors[playerIndex].value = R.color.backgroundColor
      }
+
+    // saves game to database
+    fun saveGame(){
+        viewModelScope.launch {
+            // setting unique gameID for the game
+            var newId: Int = 1
+            val cnt: Int = repository.getRowsCount().firstOrNull()!!
+            if(cnt != 0){
+                val mxId: Int = repository.getMaxId().firstOrNull()!!
+                newId = mxId + 1
+            }
+
+            val name = "Game $newId"
+            val game = Game(newId, name, count, currentPlayer, players.toList(),
+                playersScore.map { it.value ?: "" }.toTypedArray().toList() )
+
+            repository.insertGame(game)
+        }
+        processToMain.value = true
+    }
 
 }

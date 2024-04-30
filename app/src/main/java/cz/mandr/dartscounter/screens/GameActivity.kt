@@ -1,8 +1,10 @@
 package cz.mandr.dartscounter.screens
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
+import cz.mandr.dartscounter.MyApplication
 import cz.mandr.dartscounter.databinding.ActivityGameBinding
 
 class GameActivity : AppCompatActivity() {
@@ -15,7 +17,8 @@ class GameActivity : AppCompatActivity() {
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel = ViewModelProvider(this, GameViewModelFactory())
+        val app = application as MyApplication
+        viewModel = ViewModelProvider(this, GameViewModelFactory(app.repository))
             .get(GameViewModel::class.java)
 
         binding.viewModel = viewModel
@@ -38,6 +41,15 @@ class GameActivity : AppCompatActivity() {
         for(i in 0..< viewModel.count){
             viewModel.playersScore[i].value = arrScore!![i]
         }
+
+
+        viewModel.processToMain.observe(this, { value ->
+            if(value){
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                viewModel.processToMain.value = false
+            }
+        })
 
     }
 }

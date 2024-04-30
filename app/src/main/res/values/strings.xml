@@ -14,5 +14,6 @@
     <string name="GAME_Throw2">Throw 2:</string>
     <string name="GAME_Throw3">Throw 3:</string>
     <string name="GAME_NextPlayer">Next Player</string>
+    <string name="GAME_Save">Save</string>
 
 </resources>
