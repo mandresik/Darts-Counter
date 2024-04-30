@@ -7,7 +7,11 @@ data class Game(
     val firstToPlay: Int,
     val players: List<String>,
     val score: List<String>
-)
+){
+    fun playersString() : String{
+        return "ou jes"
+    }
+}
 
 fun Game.mapToGameDTO() : GameDTO {
     return GameDTO(
