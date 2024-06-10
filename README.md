@@ -20,18 +20,21 @@ You can create new game for 1 to 6 players with 5 possible initial scores.
 
 ![create1] ![create2]
 
-### Tracking score 
+### Tracking score & Saved games
 The player whose turn it is is marked.
-If player scores more points than he needs, score remains the same and next player continues. Player that wins is shown in winning screen.
-
-![fin1] ![fin2]
-
-### Saved games
 While playing, you can save game by clicking on save game button in the right upper corner. 
 The game is then saved to Saved games and you can see the players and their score. 
 You can finish saved game (player's turn is also saved) or delete it.
 
-![save1] ![save2]
+![xxx] ![save1] ![save2]
+
+### Finishing game
+
+If player scores more points than he needs, score remains the same and next player continues. Player that wins is shown in winning screen.
+
+![fin1] ![fin2]
+
+
 
 
 
@@ -45,4 +48,5 @@ You can finish saved game (player's turn is also saved) or delete it.
 [save2]: https://live.staticflickr.com/65535/53780945177_d5f03a7e18.jpg
 [fin1]: https://live.staticflickr.com/65535/53782319499_a5ea80b421.jpg
 [fin2]: https://live.staticflickr.com/65535/53782096883_c62c87f126.jpg
+[xxx]: https://live.staticflickr.com/65535/53781880446_8aa2487e1c.jpg
 
